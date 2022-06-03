@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TourismOnMarsLogbook</string>
+    <string name="tourism_on_mars_welcome">Tourism on Mars Logbook</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="annotation_title_hint">Título</string>
+    <string name="description_hint">Conte como está se saindo hoje!</string>
+    <string name="add_button_text">Adicionar</string>
+    <string name="menu_fisrt_item">Curiosidades sobre o espaço</string>
+</resources>

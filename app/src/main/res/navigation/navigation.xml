@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/annotationFragment">
+
+    <fragment
+        android:id="@+id/annotationFragment"
+        android:name="com.example.tourismonmarslogbook.ui.annotation.AnnotationFragment"
+        android:label="fragment_anotation"
+        tools:layout="@layout/fragment_annotation" >
+        <action
+            android:id="@+id/action_annotationFragment_to_anotationDetailFragment"
+            app:destination="@id/anotationDetailFragment" />
+        <action
+            android:id="@+id/action_annotationFragment_to_addAnnotationFragment"
+            app:destination="@id/addAnnotationFragment" />
+        <action
+            android:id="@+id/action_annotationFragment_to_rulesFragment"
+            app:destination="@id/rulesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/anotationDetailFragment"
+        android:name="com.example.tourismonmarslogbook.ui.annotationsdetail.AnotationDetailFragment"
+        android:label="fragment_anotation_detail"
+        tools:layout="@layout/fragment_annotation_detail" />
+    <fragment
+        android:id="@+id/addAnnotationFragment"
+        android:name="com.example.tourismonmarslogbook.ui.addannotation.AddAnnotationFragment"
+        android:label="fragment_add_annotation"
+        tools:layout="@layout/fragment_add_annotation" >
+        <action
+            android:id="@+id/action_addAnnotationFragment_to_annotationFragment"
+            app:destination="@id/annotationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.tourismonmarslogbook.ui.splashscreen.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_annotationFragment"
+            app:destination="@id/annotationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.example.tourismonmarslogbook.ui.curiosity.CuriosityFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_curiosity" />
+</navigation>

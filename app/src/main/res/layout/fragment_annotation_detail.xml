@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.annotationsdetail.AnotationDetailFragment">
+
+    <TextView
+        android:id="@+id/title_annotation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="Title of annotation"
+        android:textSize="@dimen/bigger_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/bigger_space"
+        />
+    <TextView
+        android:id="@+id/annotation_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="descriprion of annotation"
+        android:layout_margin="@dimen/bigger_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_annotation"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
