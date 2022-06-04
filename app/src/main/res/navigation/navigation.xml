@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/annotationFragment">
+    app:startDestination="@id/splashScreenFragment">
 
     <fragment
         android:id="@+id/annotationFragment"
@@ -22,9 +22,16 @@
     </fragment>
     <fragment
         android:id="@+id/anotationDetailFragment"
-        android:name="com.example.tourismonmarslogbook.ui.annotationsdetail.AnotationDetailFragment"
+        android:name="com.example.tourismonmarslogbook.ui.annotationsdetail.AnnotationDetailFragment"
         android:label="fragment_anotation_detail"
-        tools:layout="@layout/fragment_annotation_detail" />
+        tools:layout="@layout/fragment_annotation_detail" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/addAnnotationFragment"
         android:name="com.example.tourismonmarslogbook.ui.addannotation.AddAnnotationFragment"

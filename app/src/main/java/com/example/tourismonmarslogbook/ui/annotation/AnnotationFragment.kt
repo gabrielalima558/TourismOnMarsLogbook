@@ -66,6 +66,14 @@ class AnnotationFragment : Fragment() {
                     .show();
             }
         }
+        adapter.onItemClick = { note ->
+            findNavController().navigate(
+                AnnotationFragmentDirections.actionAnnotationFragmentToAnotationDetailFragment(
+                    note.title,
+                    note.description
+                )
+            )
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

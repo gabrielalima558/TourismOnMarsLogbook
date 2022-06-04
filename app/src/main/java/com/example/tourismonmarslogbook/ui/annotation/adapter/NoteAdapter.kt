@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tourismonmarslogbook.database.Note
 import com.example.tourismonmarslogbook.databinding.ListItemBinding
 
-class NoteAdapter : ListAdapter<Note, NoteAdapter.NoteViewHolder>(NoteDiffUtil) {
+class NoteAdapter() : ListAdapter<Note, NoteAdapter.NoteViewHolder>(NoteDiffUtil) {
+
+    var onItemClick: ((Note) -> Unit)? = null
+    var secondNotesList: ArrayList<Note> = arrayListOf()
 
     object NoteDiffUtil : DiffUtil.ItemCallback<Note>() {
         override fun areItemsTheSame(oldItem: Note, newItem: Note): Boolean {
@@ -27,17 +30,22 @@ class NoteAdapter : ListAdapter<Note, NoteAdapter.NoteViewHolder>(NoteDiffUtil) 
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        val user = getItem(position)
-        holder.bindCell(user)
+        val note = getItem(position)
+        holder.bindCell(note)
+        secondNotesList.add(getItem(position))
     }
 
-    class NoteViewHolder(private val binding: ListItemBinding) :
+    inner class NoteViewHolder(private val binding: ListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bindCell(note: Note) {
-
-            binding.txtTitle.text = note.title
-            binding.txtDecription.text = note.description
+            fun bindCell(note: Note) {
+                binding.txtTitle.text = note.title
+                binding.txtDecription.text = note.description
+            }
+            init {
+                binding.root.setOnClickListener {
+                    onItemClick?.invoke(secondNotesList[adapterPosition])
+                }
+            }
         }
-    }
 }
