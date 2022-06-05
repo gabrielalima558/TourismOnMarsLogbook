@@ -24,6 +24,7 @@ class NoteAdapter() : ListAdapter<Note, NoteAdapter.NoteViewHolder>(NoteDiffUtil
 
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         val binding = ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return NoteViewHolder(binding)

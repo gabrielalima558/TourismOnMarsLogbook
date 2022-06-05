@@ -3,11 +3,14 @@ package com.example.tourismonmarslogbook.ui.annotation
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.tourismonmarslogbook.R
 import com.example.tourismonmarslogbook.database.NoteDatabase
 import com.example.tourismonmarslogbook.databinding.FragmentAnnotationBinding
@@ -23,7 +26,8 @@ class AnnotationFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-
+        requireActivity().window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
+        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
     }
 
     override fun onCreateView(
