@@ -1,10 +1,14 @@
 <resources>
     <string name="app_name">TourismOnMarsLogbook</string>
     <string name="tourism_on_mars_welcome">Tourism on Mars Logbook</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="annotation_title_hint">Título</string>
     <string name="description_hint">Conte como está se saindo hoje!</string>
     <string name="add_button_text">Adicionar</string>
     <string name="menu_fisrt_item">Curiosidades sobre o espaço</string>
+    <string name="title_curiosity_one">Não existe som no espaço</string>
+    <string name="curiosity_one">No espaço, não existe ar. Ou seja, é um grande vácuo. Como o som é composto por ondas que se espalham justamente pelo ar, elas não têm como se locomover entre as estrelas e planetas.</string>
+    <string name="title_curiosity_two">Não dá para pisar em Júpiter, Saturno, Urano e Netuno</string>
+    <string name="curiosity_two">Esses quatro planetas são gasosos, ou seja, não possuem uma superfície sólida. Dessa maneira, nossos astronautas precisariam desenvolver formas diferentes de explorar esses mundos.</string>
+    <string name="title_curiosity_tree">Ao redor da Terra há muito lixo espacial</string>
+    <string name="curiosity_tree">É comum que missões espaciais deixem resíduos no espaço.</string>
 </resources>
