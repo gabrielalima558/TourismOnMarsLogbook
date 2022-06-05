@@ -65,14 +65,39 @@ class AnnotationFragment : Fragment() {
                 LinearLayoutManager.VERTICAL
             )
         )
-        annotationViewModel.notes.observe(viewLifecycleOwner) {
+        annotationViewModel.notes().observe(viewLifecycleOwner) {
             if (it.isNotEmpty()) {
                 adapter.submitList(it)
             } else {
                 Toast.makeText(activity, "Tripulante faça suas anotações!", Toast.LENGTH_LONG)
-                    .show();
+                    .show()
             }
         }
+       swipeToDelete()
+    }
+    private fun swipeToDelete() {
+        val itemTouchHelperCallback =
+            object :
+                ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+
+                override fun onMove(
+                    recyclerView: RecyclerView,
+                    viewHolder: RecyclerView.ViewHolder,
+                    target: RecyclerView.ViewHolder
+                ): Boolean {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                    annotationViewModel.startDeleteAnnotation(adapter.getItemAt(viewHolder.adapterPosition))
+                    annotationViewModel.notes()
+
+                }
+
+            }
+        val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
+        itemTouchHelper.attachToRecyclerView(binding.anotationsList)
+
         adapter.onItemClick = { note ->
             findNavController().navigate(
                 AnnotationFragmentDirections.actionAnnotationFragmentToAnotationDetailFragment(

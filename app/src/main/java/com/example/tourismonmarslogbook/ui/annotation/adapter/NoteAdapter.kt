@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tourismonmarslogbook.database.Note
 import com.example.tourismonmarslogbook.databinding.ListItemBinding
 
-class NoteAdapter() : ListAdapter<Note, NoteAdapter.NoteViewHolder>(NoteDiffUtil) {
+class NoteAdapter : ListAdapter<Note, NoteAdapter.NoteViewHolder>(NoteDiffUtil) {
 
     var onItemClick: ((Note) -> Unit)? = null
     var secondNotesList: ArrayList<Note> = arrayListOf()
@@ -24,7 +24,6 @@ class NoteAdapter() : ListAdapter<Note, NoteAdapter.NoteViewHolder>(NoteDiffUtil
 
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         val binding = ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return NoteViewHolder(binding)
@@ -34,6 +33,10 @@ class NoteAdapter() : ListAdapter<Note, NoteAdapter.NoteViewHolder>(NoteDiffUtil
         val note = getItem(position)
         holder.bindCell(note)
         secondNotesList.add(getItem(position))
+    }
+
+    fun getItemAt(position: Int): Note{
+        return secondNotesList[position]
     }
 
     inner class NoteViewHolder(private val binding: ListItemBinding) :
