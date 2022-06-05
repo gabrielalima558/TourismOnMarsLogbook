@@ -24,7 +24,15 @@
         app:layout_constraintTop_toBottomOf="@id/txt_title"
         android:layout_margin="@dimen/bigger_text_size"
         android:textSize="@dimen/medium_text_size"
+        android:maxLines="2"
         />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
